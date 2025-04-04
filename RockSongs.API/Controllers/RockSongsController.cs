@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using RockSongs.API.Service;
 
 namespace RockSongs.API.Controllers
@@ -20,7 +21,15 @@ namespace RockSongs.API.Controllers
         [HttpGet("GetRandomSong")]
         public IActionResult GetRandomSong()
         {
-            return Ok(_rockSongsList.RandomSong());
+            _logger.LogTrace("Trace");
+            _logger.LogDebug("Debug");
+            _logger.LogInformation("Information");
+            _logger.LogWarning("Warning");
+            _logger.LogError("Error");
+            _logger.LogCritical("Critical");
+            RockSong rockSong = _rockSongsList.RandomSong();
+            _logger.LogInformation(JsonConvert.SerializeObject(rockSong));
+            return Ok(rockSong);
         }
     }
 }
