@@ -1,0 +1,6 @@
+@RockSongs.API_HostAddress = http://localhost:5208
+
+GET {{RockSongs.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
