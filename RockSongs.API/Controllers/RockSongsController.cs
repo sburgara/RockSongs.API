@@ -29,8 +29,8 @@ namespace RockSongs.API.Controllers
             _logger.LogCritical("Critical");
             RockSong rockSong = _rockSongsList.RandomSong();
             _logger.LogInformation(JsonConvert.SerializeObject(rockSong));
-            throw new Exception("Breaking the service");
-            //return Ok(rockSong);
+            //throw new Exception("Breaking the service");
+            return Ok(rockSong);
         }
     }
 }
